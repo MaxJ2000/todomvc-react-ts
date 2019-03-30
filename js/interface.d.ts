@@ -1,44 +1,44 @@
-interface ITodo{
-  id: string;
+import * as React from 'react';
+
+interface ITodo {
+  key: string;
   title: string;
   completed: boolean;
 }
-interface ITodoItemProps{
-  key: string;
+interface ITodoLiprops {
   todo: ITodo;
-  editing?: boolean;
-  onSave: (val: any) => void;
-  onDestory: () => void;
-  onEdit: () => void;
-  onCancel: (event:any) => void;
-  onToggle: () => void;
+  onEdit: (key: string) => void;
+  onSave: (key: string) => void;
+  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onDelete: (key: string) => void;
+  onToggle: (key: string) => void;
 }
-interface ITodoItemState{
-  editText: string;
+interface ITodoLiStage {}
+interface ITodoListProps {
+  todoList: ITodo[];
+  onEdit: (key: string) => void;
+  onSave: (key: string) => void;
+  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onToggle: (key: string) => void;
+  onDelete: (key: string) => void;
 }
-interface ITodoFooterProps{
-  completedCount: number;
-  onClearCompleted: any;//为啥是any妈耶
-  nowShowing: string;
-  count: number;
+interface ITodoListStage {}
+interface ITodoInputProps {
+  onChange: React.KeyboardEventHandler;
 }
-interface ITodoModel {
-  key: any;
-  todos: Array<ITodo>;
-  onChanges: Array<any>;
-  subscribe:(onChange:any)=>void;
-  inform:()=>void;
-  addTodo:(title: string)=>void;
-  toggleAll:(checked:boolean)=>void;
-  toggle:(todoToToggle:ITodo)=>void;
-  destroy:(todo:ITodo)=>void;
-  save:(todoToSave:ITodo, text:string)=>void;
-  clearCompleted:()=>void;
+interface ITodoInputStage {}
+interface ITodoCountProps {
+  num: number;
 }
-interface IAppProps{
-  model: ITodoModel;
+interface ITodoCountStage {}
+interface IPannelProps {}
+interface IPannelStage {
+  todoList: ITodo[];
 }
-interface IAppState {
-  editing?: string;
-  nowShowing?: string
+interface IPannel extends React.Component<IPannelProps, IPannelStage> {
+  onEdit: (key: string) => void;
+  onSave: (key: string) => void;
+  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onToggle: (key: string) => void;
+  onDelete: (key: string) => void;
 }
