@@ -1,9 +1,10 @@
 import * as React from 'react';
-import todoPage from '../js/todoPage';
+import Pannel from './IPannel';
 
 class App extends React.Component {
   public render() {
     return (
+      <Pannel></Pannel>
     );
   }
 }

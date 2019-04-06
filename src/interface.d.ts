@@ -7,26 +7,27 @@ interface ITodo {
 }
 interface ITodoLiprops {
   todo: ITodo;
-  onEdit: (key: string) => void;
-  onSave: (key: string) => void;
-  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onSave: (key: string,title: string) => void;
   onDelete: (key: string) => void;
   onToggle: (key: string) => void;
 }
-interface ITodoLiStage {}
+interface ITodoLiStage {
+  onEdit: boolean;
+  value: string;
+}
 interface ITodoListProps {
   todoList: ITodo[];
-  onEdit: (key: string) => void;
-  onSave: (key: string) => void;
-  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onSave: (key: string, title: string) => void;
   onToggle: (key: string) => void;
   onDelete: (key: string) => void;
 }
 interface ITodoListStage {}
 interface ITodoInputProps {
-  onChange: React.KeyboardEventHandler;
+  onAdd: (key: string, title: string)=>void;
 }
-interface ITodoInputStage {}
+interface ITodoInputStage {
+  value: string;
+}
 interface ITodoCountProps {
   num: number;
 }
@@ -36,9 +37,8 @@ interface IPannelStage {
   todoList: ITodo[];
 }
 interface IPannel extends React.Component<IPannelProps, IPannelStage> {
-  onEdit: (key: string) => void;
-  onSave: (key: string) => void;
-  onKeydown: (e: React.KeyboardEvent, key: string) => void;
+  onSave: (key: string, title: string) => void;
   onToggle: (key: string) => void;
   onDelete: (key: string) => void;
+  onAdd: (key: string, title: string) => void;  
 }

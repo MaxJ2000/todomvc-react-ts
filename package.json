@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-scripts-ts": "3.1.0"
+    "react": "",
+    "react-dom": "",
+    "react-scripts-ts": ""
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -14,10 +14,10 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/node": "latest",
-    "@types/react": "^16.8.10",
-    "@types/react-dom": "^16.8.3",
-    "typescript": "^3.3.4000"
+    "@types/jest": "",
+    "@types/node": "",
+    "@types/react": "",
+    "@types/react-dom": "",
+    "typescript": ""
   }
 }
